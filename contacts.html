@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIPLOMO | Контакты</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Оверлей для мобильного меню -->
+    <div class="overlay"></div>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon"><i class="fas fa-graduation-cap"></i></span>
+                    <span class="logo-text">DIPLOMO</span>
+                </a>
+
+                <!-- Навигация для десктопа -->
+                <nav class="nav-desktop">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-user"></i> Об авторе</a></li>
+                        <li><a href="library.html"><i class="fas fa-book"></i> Библиотека</a></li>
+                        <li><a href="add-work.html" id="addWorkLink" style="display: none;"><i
+                                    class="fas fa-plus-circle"></i> Добавить работу</a></li>
+                        <li><a href="contacts.html" class="active"><i class="fas fa-address-book"></i> Контакты</a></li>
+                        <li><a href="#" id="loginLink"><i class="fas fa-sign-in-alt"></i> Вход для автора</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Бургер-меню для мобильных -->
+                <button class="burger-menu" id="burgerMenu">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Мобильное меню -->
+    <nav class="nav-mobile" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="logo-mobile">
+                <i class="fas fa-graduation-cap"></i> DIPLOMO
+            </span>
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fas fa-user"></i> Об авторе</a></li>
+            <li><a href="library.html"><i class="fas fa-book"></i> Библиотека</a></li>
+            <li><a href="add-work.html" id="addWorkLinkMobile" style="display: none;"><i class="fas fa-plus-circle"></i>
+                    Добавить работу</a></li>
+            <li><a href="contacts.html" class="active"><i class="fas fa-address-book"></i> Контакты</a></li>
+            <li><a href="#" id="loginLinkMobile"><i class="fas fa-sign-in-alt"></i> Вход для автора</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <p>Библиотека курсовых и дипломных работ</p>
+            <p>© Лилия, 2025</p>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+        <section class="contacts-header fade-in">
+            <div class="container">
+                <div class="contacts-header-content">
+                    <h1>Контакты</h1>
+                    <p>Свяжитесь с автором для получения дополнительной информации о работах</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts-content">
+            <div class="container">
+                <div class="contacts-grid">
+                    <div class="contact-info">
+                        <h2><i class="fas fa-user-circle"></i> Информация об авторе</h2>
+
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Автор</h4>
+                                    <p>Лилия</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Специализация</h4>
+                                    <p>Экономический и финансовый анализ предприятий</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Образование</h4>
+                                    <p>Кандидат экономических наук, доцент</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Количество работ</h4>
+                                    <p>Более 300 курсовых и дипломных работ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-section">
+                        <h2><i class="fas fa-envelope"></i> Форма обратной связи</h2>
+                        <p>Отправьте сообщение, чтобы получить информацию о работах или заказать консультацию</p>
+
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Ваше имя</label>
+                                <input type="text" id="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Тема сообщения</label>
+                                <select id="subject">
+                                    <option value="general">Общий вопрос</option>
+                                    <option value="work">Вопрос по работе</option>
+                                    <option value="order">Заказ работы</option>
+                                    <option value="consultation">Консультация</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Сообщение</label>
+                                <textarea id="message" rows="5" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Отправить сообщение <i
+                                    class="fas fa-paper-plane"></i></button>
+                        </form>
+
+                        <div id="formMessage" class="form-message"></div>
+                    </div>
+                </div>
+
+                <div class="direct-contacts">
+                    <h2><i class="fas fa-address-card"></i> Прямые контакты</h2>
+
+                    <div class="direct-contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4>Email</h4>
+                            <p>lilia@diplomo.ru</p>
+                            <a href="mailto:lilia@diplomo.ru" class="contact-link">Написать письмо <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h4>Телефон</h4>
+                            <p>+7 (XXX) XXX-XX-XX</p>
+                            <a href="tel:+7XXXXXXXXXX" class="contact-link">Позвонить <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4>Местоположение</h4>
+                            <p>Москва, Россия</p>
+                            <p>Работает удаленно</p>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h4>Часы работы</h4>
+                            <p>Пн-Пт: 10:00 - 20:00</p>
+                            <p>Сб-Вс: по договоренности</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4><i class="fas fa-graduation-cap"></i> DIPLOMO</h4>
+                    <p>Библиотека курсовых и дипломных работ по экономике и финансам предприятий</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Контактные данные</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-user"></i> Автор: Лилия</li>
+                        <li><i class="fas fa-envelope"></i> Email: lilia@diplomo.ru</li>
+                        <li><i class="fas fa-phone"></i> Телефон: +7 (XXX) XXX-XX-XX</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Быстрые ссылки</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Об авторе</a></li>
+                        <li><a href="library.html">Библиотека</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 DIPLOMO. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

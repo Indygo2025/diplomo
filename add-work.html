@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIPLOMO | Добавить работу</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Оверлей для мобильного меню -->
+    <div class="overlay"></div>
+    
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon"><i class="fas fa-graduation-cap"></i></span>
+                    <span class="logo-text">DIPLOMO</span>
+                </a>
+                
+                <!-- Навигация для десктопа -->
+                <nav class="nav-desktop">
+                    <ul>
+                     <li><a href="index.html"><i class="fas fa-user"></i> Об авторе</a></li>
+            <li><a href="library.html"><i class="fas fa-book"></i> Библиотека</a></li>
+            <li><a href="add-work.html" id="addWorkLinkMobile" style="display: none;"><i class="fas fa-plus-circle"></i>
+                    Добавить работу</a></li>
+            <li><a href="contacts.html" class="active"><i class="fas fa-address-book"></i> Контакты</a></li>
+            <li><a href="#" id="loginLinkMobile"><i class="fas fa-sign-in-alt"></i> Вход для автора</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Бургер-меню для мобильных -->
+                <button class="burger-menu" id="burgerMenu">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Мобильное меню -->
+    <nav class="nav-mobile" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="logo-mobile">
+                <i class="fas fa-graduation-cap"></i> DIPLOMO
+            </span>
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html"><i class="fas fa-user"></i> Об авторе</a></li>
+            <li><a href="library.html"><i class="fas fa-book"></i> Библиотека</a></li>
+            <li><a href="add-work.html" class="active" id="addWorkLinkMobile" style="display: none;"><i class="fas fa-plus-circle"></i>
+                    Добавить работу</a></li>
+            <li><a href="contacts.html"><i class="fas fa-address-book"></i> Контакты</a></li>
+            <li><a href="#" id="loginLinkMobile"><i class="fas fa-sign-in-alt"></i> Вход для автора</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <p>Библиотека курсовых и дипломных работ</p>
+            <p>© Лилия, 2025</p>
+        </div>
+    </nav>
+    
+    <!-- Модальное окно входа -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Вход для автора</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginUsername">Логин</label>
+                        <input type="text" id="loginUsername" placeholder="Введите логин" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loginPassword">Пароль</label>
+                        <input type="password" id="loginPassword" placeholder="Введите пароль" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Войти</button>
+                    </div>
+                    
+                    <div id="loginMessage" class="form-message"></div>
+                    
+                    <div class="login-note">
+                        <p><strong>Для демонстрации:</strong></p>
+                        <p>Логин: <code>author</code></p>
+                        <p>Пароль: <code>diplomo2023</code></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Основной контент -->
+    <main class="main-content">
+        <section class="addwork-header fade-in">
+            <div class="container">
+                <div class="addwork-header-content">
+                    <h1>Добавить новую работу</h1>
+                    <p>Заполните форму для добавления новой работы в библиотеку</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="addwork-content">
+            <div class="container">
+                <!-- Защищенный контент (только для авторизованных пользователей) -->
+                <div id="protectedContent" style="display: none;">
+                    <div class="addwork-form-container">
+                        <form id="addWorkForm" class="addwork-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="workNumber">Номер работы</label>
+                                    <input type="text" id="workNumber" value="Загружается..." readonly>
+                                    <small class="form-hint">Номер присваивается автоматически</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="workType">Тип работы *</label>
+                                    <select id="workType" required>
+                                        <option value="">Выберите тип работы</option>
+                                        <option value="diploma">Дипломная работа</option>
+                                        <option value="course">Курсовая работа</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="workTitle">Тема работы *</label>
+                                <input type="text" id="workTitle" placeholder="Введите тему работы" required>
+                                <small class="form-hint">Например: "Анализ финансового состояния предприятия"</small>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="workPages">Количество страниц *</label>
+                                    <input type="number" id="workPages" min="10" max="200" placeholder="50" required>
+                                    <small class="form-hint">От 10 до 200 страниц</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="workYear">Год *</label>
+                                    <select id="workYear" required>
+                                        <option value="">Выберите год</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="workDescription">Описание работы</label>
+                                <textarea id="workDescription" rows="4" placeholder="Краткое описание работы..."></textarea>
+                                <small class="form-hint">Это описание будет отображаться в карточке работы</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="workKeywords">Ключевые слова</label>
+                                <input type="text" id="workKeywords" placeholder="финансы, анализ, предприятие, рентабельность">
+                                <small class="form-hint">Укажите ключевые слова через запятую для улучшения поиска</small>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-plus-circle"></i> Добавить работу
+                                </button>
+                                <button type="button" id="resetForm" class="btn btn-secondary">
+                                    <i class="fas fa-redo"></i> Очистить форму
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <div id="addWorkMessage" class="form-message"></div>
+                    </div>
+                    
+                    <div class="recently-added">
+                        <h3><i class="fas fa-history"></i> Недавно добавленные работы</h3>
+                        <div id="recentWorks" class="recent-works-list">
+                            <!-- Список недавно добавленных работ -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Сообщение для неавторизованных пользователей -->
+                <div id="accessDenied" class="access-denied">
+                    <div class="access-denied-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h2>Доступ запрещен</h2>
+                    <p>Эта страница доступна только автору работ.</p>
+                    <p>Пожалуйста, войдите в систему для добавления новых работ.</p>
+                    <button id="loginButton" class="btn btn-primary">
+                        <i class="fas fa-sign-in-alt"></i> Войти для автора
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4><i class="fas fa-graduation-cap"></i> DIPLOMO</h4>
+                    <p>Библиотека курсовых и дипломных работ по экономике и финансам предприятий</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Контактные данные</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-user"></i> Автор: Лилия</li>
+                        <li><i class="fas fa-envelope"></i> Email: lilia@diplomo.ru</li>
+                        <li><i class="fas fa-phone"></i> Телефон: +7 (XXX) XXX-XX-XX</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Быстрые ссылки</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Об авторе</a></li>
+                        <li><a href="library.html">Библиотека</a></li>
+                        <li><a href="add-work.html">Добавить работу</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 DIPLOMO. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

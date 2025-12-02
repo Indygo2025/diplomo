@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIPLOMO | Главная</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Оверлей для мобильного меню -->
+    <div class="overlay"></div>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon"><i class="fas fa-graduation-cap"></i></span>
+                    <span class="logo-text">DIPLOMO</span>
+                </a>
+
+                <!-- Навигация для десктопа -->
+                <nav class="nav-desktop">
+                    <ul>
+                        <li><a href="index.html" class="active"><i class="fas fa-user"></i> Об авторе</a></li>
+                        <li><a href="library.html"><i class="fas fa-book"></i> Библиотека</a></li>
+                        <li><a href="add-work.html" id="addWorkLink" style="display: none;"><i
+                                    class="fas fa-plus-circle"></i> Добавить работу</a></li>
+                        <li><a href="contacts.html"><i class="fas fa-address-book"></i> Контакты</a></li>
+                        <li><a href="#" id="loginLink"><i class="fas fa-sign-in-alt"></i> Вход для автора</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Бургер-меню для мобильных -->
+                <button class="burger-menu" id="burgerMenu">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Мобильное меню -->
+    <nav class="nav-mobile" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="logo-mobile">
+                <i class="fas fa-graduation-cap"></i> DIPLOMO
+            </span>
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html" class="active"><i class="fas fa-user"></i> Об авторе</a></li>
+            <li><a href="library.html"><i class="fas fa-book"></i> Библиотека</a></li>
+            <li><a href="add-work.html" id="addWorkLinkMobile" style="display: none;"><i class="fas fa-plus-circle"></i>
+                    Добавить работу</a></li>
+            <li><a href="contacts.html"><i class="fas fa-address-book"></i> Контакты</a></li>
+            <li><a href="#" id="loginLinkMobile"><i class="fas fa-sign-in-alt"></i> Вход для автора</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+            <p>Библиотека курсовых и дипломных работ</p>
+            <p>© Лилия, 2025</p>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+        <section class="hero fade-in">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Библиотека курсовых и дипломных работ</h1>
+                    <p class="hero-subtitle">Автор: <span class="highlight">Лилия</span></p>
+                    <p class="hero-description">Экономический и финансовый анализ предприятий</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-author">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Об авторе</h2>
+                    <div class="underline"></div>
+                </div>
+
+                <div class="author-info">
+                    <div class="author-photo">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                    </div>
+                    <div class="author-details">
+                        <h3>Лилия, экономист-аналитик</h3>
+                        <p>Профессиональный экономист с 10-летним опытом анализа финансового состояния предприятий.
+                            Специализация - экономический и финансовый анализ, оценка эффективности бизнес-процессов,
+                            разработка стратегий повышения рентабельности.</p>
+                        <p>Автор более 300 научных работ, включая курсовые, дипломные работы и методические пособия по
+                            экономике предприятия. Работы основаны на реальных данных и практических кейсах.</p>
+
+                        <div class="author-stats">
+                            <div class="stat">
+                                <i class="fas fa-file-alt"></i>
+                                <div>
+                                    <h4>300+</h4>
+                                    <p> работ</p>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-chart-line"></i>
+                                <div>
+                                    <h4>25 лет</h4>
+                                    <p>опыта в аналитике</p>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-industry"></i>
+                                <div>
+                                    <h4>20+</h4>
+                                    <p>отраслей изучено</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="works-overview">
+                    <h3>О работах</h3>
+                    <p>Библиотека содержит работы, посвященные различным аспектам экономики и финансов предприятий:</p>
+
+                    <div class="works-categories">
+                        <div class="category">
+                            <i class="fas fa-balance-scale"></i>
+                            <h4>Финансовый анализ</h4>
+                            <p>Анализ финансовой отчетности, оценка ликвидности, платежеспособности и рентабельности
+                                предприятий.</p>
+                        </div>
+                        <div class="category">
+                            <i class="fas fa-calculator"></i>
+                            <h4>Экономическое планирование</h4>
+                            <p>Бюджетирование, финансовое планирование, разработка бизнес-планов и инвестиционных
+                                проектов.</p>
+                        </div>
+                        <div class="category">
+                            <i class="fas fa-search-dollar"></i>
+                            <h4>Диагностика проблем</h4>
+                            <p>Выявление финансовых проблем предприятий и разработка рекомендаций по их устранению.</p>
+                        </div>
+                    </div>
+
+                    <div class="cta-section">
+                        <p>Изучите полную коллекцию работ в нашей библиотеке</p>
+                        <a href="library.html" class="btn btn-primary">Перейти к библиотеке <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4><i class="fas fa-graduation-cap"></i> DIPLOMO</h4>
+                    <p>Библиотека курсовых и дипломных работ по экономике и финансам предприятий</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Контактные данные</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-user"></i> Автор: Лилия</li>
+                        <li><i class="fas fa-envelope"></i> Email: lilia@diplomo.ru</li>
+                        <li><i class="fas fa-phone"></i> Телефон: +7 (XXX) XXX-XX-XX</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Быстрые ссылки</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Об авторе</a></li>
+                        <li><a href="library.html">Библиотека</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 DIPLOMO. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
